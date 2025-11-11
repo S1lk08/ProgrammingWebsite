@@ -1,0 +1,404 @@
+/* Global */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Disclaimer (optional if you still use it) */
+.disclaimer {
+  background-color: #290000;
+  color: #ff4d4d;
+  text-align: center;
+  font-weight: bold;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* Header */
+header {
+  background: linear-gradient(180deg, #ff3b3b, #c50000);
+  text-align: center;
+  padding: 60px 0 40px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-title {
+  font-size: 2.6rem;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.header-top-left {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit; /* keep the text white instead of default blue */
+}
+
+.small-logo {
+  height: 55px;         /* controls overall size */
+  width: auto;          /* scales proportionally */
+  border-radius: 6px;   /* optional, keeps corners smooth */
+  object-fit: contain;  /* ensures no cropping */
+}
+
+.header-subtitle {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: white;
+}
+
+.header-link {
+    text-decoration: none;
+}
+
+/* Navigation */
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ul.topnav li {
+  display: inline-block;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+ul.topnav li a:hover {
+  background-color: #b32121;
+}
+
+ul.topnav li a.active {
+  background-color: #151515;
+  color: #fff;
+}
+
+/* Main Content */
+main.content {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.left-column,
+.right-column {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-column {
+  flex: 2;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* About Section — replaces about image with magnifying glass icon */
+.about-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-icon svg {
+  width: 48px;
+  height: 48px;
+  fill: #c50000;
+}
+
+/* Buttons */
+.subsection .btn,
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #ff3b3b;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.subsection .btn:hover,
+.btn:hover {
+  background: #c50000;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  main.content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    padding: 40px 0 30px;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  ul.topnav {
+    flex-wrap: wrap;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .about-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Game Jams Section */
+.game-jam-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-jam-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.game-jam-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.jam-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.jam-details {
+  padding: 20px;
+}
+
+.jam-details h2 {
+  margin-top: 0;
+  color: #c50000;
+}
+
+.jam-details p {
+  margin: 6px 0;
+}
+
+.jam-description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.contact-list a {
+  color: #c50000;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Slight polish for about icon */
+.about-icon svg {
+  width: 50px;
+  height: 50px;
+  fill: #c50000;
+}
+
+/* Controller Card - Static Intro Section */
+.controller-card {
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.controller-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px auto;
+}
+
+.controller-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #c50000; /* Theme color */
+}
+
+/* Disable hover float for controller card */
+.controller-card:hover {
+  transform: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  cursor: default;
+}
+
+
+
+/* Info Icon (right column) */
+.info-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon svg {
+  width: 45px;
+  height: 45px;
+  fill: #c50000; /* matches theme */
+}
+
+/* Snowflake Icon for Winter Jam */
+.snowflake-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  background-color: #ffffffcc; /* translucent white backdrop */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.snowflake-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: #0099ff; /* cool winter blue */
+}
+
+/* Ensure Winter Jam Card can hold positioned icon */
+.winter-jam {
+  position: relative;
+}
+
+/* Icon-based Game Jam Cards */
+.jam-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 30px;
+  height: 200px;
+}
+
+.jam-icon svg {
+  width: 90px;
+  height: 90px;
+}
+
+/* Unique icon colors per season */
+.winter-icon svg {
+  fill: #4db8ff; /* icy blue */
+}
+
+.spring-icon svg {
+  fill: #4caf50; /* fresh green */
+}
+
+.summer-icon svg {
+  fill: #ffcc00; /* warm yellow */
+}
