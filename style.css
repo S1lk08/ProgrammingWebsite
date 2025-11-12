@@ -1,34 +1,51 @@
-/* Global */
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* Global Page Structure */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+/* Unified Body Styling */
 body {
-  margin: 0;
   background-color: #fff;
   color: #000;
   line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s, color 0.3s;
-}
 
-/* Make the page fill the screen and push footer to the bottom */
-html, body {
-  height: 100%;
-}
-
-body {
-  min-height: 100dvh;        /* fills viewport even when content is short */
+  /* Layout handling for sticky footer */
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
 }
 
+/* Unified Main Content Layout */
 main.content {
-  flex: 1 0 auto;            /* grow to fill space between header/nav and footer */
+  flex: 1 0 auto; /* fills space between header and footer */
+  
+  /* Layout for all pages */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  
+  /* Page width and padding */
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
+/* Unified Footer Styling */
 footer {
-  margin-top: auto;          /* stick to bottom when content is short */
+  margin-top: auto; /* ensures footer sits at bottom if page is short */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15); /* subtle depth for consistency with cards */
 }
 
 
@@ -189,16 +206,6 @@ main.content {
 .btn:hover {
   background: #c50000;
   transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
 }
 
 /* Responsive Layout */
@@ -423,10 +430,6 @@ footer {
   fill: #ffcc00; /* warm yellow */
 }
 
-/* --- Fix vertical alignment and spacing --- */
-main.content {
-  align-items: flex-start; /* prevent vertical stretch */
-}
 
 .left-column, .right-column, .game-jam-card {
   display: flex;
