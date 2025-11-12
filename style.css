@@ -12,14 +12,23 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Make the page fill the screen and push footer to the bottom */
 html, body {
   height: 100%;
+}
+
+body {
+  min-height: 100dvh;        /* fills viewport even when content is short */
   display: flex;
   flex-direction: column;
 }
 
 main.content {
-  flex: 1;
+  flex: 1 0 auto;            /* grow to fill space between header/nav and footer */
+}
+
+footer {
+  margin-top: auto;          /* stick to bottom when content is short */
 }
 
 
