@@ -422,3 +422,54 @@ footer {
 .summer-icon svg {
   fill: #ffcc00; /* warm yellow */
 }
+
+/* --- Fix vertical alignment and spacing --- */
+main.content {
+  align-items: flex-start; /* prevent vertical stretch */
+}
+
+.left-column, .right-column, .game-jam-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align text naturally at the top */
+  height: auto; /* prevent forced equal height */
+}
+
+/* Ensure consistent visual spacing inside cards */
+.left-column p, .right-column p, .jam-details p {
+  margin-bottom: 12px;
+}
+
+/* --- Add background visuals beside the top Game Jam intro card --- */
+.game-jam-section {
+  position: relative;
+}
+
+.game-jam-section::before,
+.game-jam-section::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  width: 160px;
+  height: 300px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, #ff3b3b30, #c5000020);
+  filter: blur(30px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.game-jam-section::before {
+  left: -100px;
+}
+
+.game-jam-section::after {
+  right: -100px;
+}
+
+/* Make sure cards appear above the background glow */
+.game-jam-card {
+  position: relative;
+  z-index: 1;
+}
+
