@@ -12,6 +12,17 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main.content {
+  flex: 1;
+}
+
+
 /* Disclaimer (optional if you still use it) */
 .disclaimer {
   background-color: #290000;
