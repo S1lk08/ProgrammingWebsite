@@ -476,3 +476,102 @@ main.content {
   z-index: 1;
 }
 
+/* ===============================
+   SEASONAL GAME JAM VISUALS
+   =============================== */
+
+/* --- General Card Visual Boost --- */
+.game-jam-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-jam-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.game-jam-card:hover::before {
+  opacity: 0.5;
+}
+
+/* ===============================
+   WINTER JAM - Frosty Blue Glow
+   =============================== */
+.winter-jam::before {
+  background: radial-gradient(circle at top right, #cdefff 0%, transparent 70%),
+              radial-gradient(circle at bottom left, #a4d8ff 10%, transparent 60%);
+  animation: winterDrift 8s ease-in-out infinite alternate;
+}
+
+.winter-icon svg {
+  fill: #3fa9ff;
+  filter: drop-shadow(0 0 8px rgba(0,150,255,0.6));
+}
+
+@keyframes winterDrift {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-10px) scale(1.05); }
+}
+
+/* ===============================
+   SPRING JAM - Green Bloom Glow
+   =============================== */
+.spring-jam::before {
+  background: radial-gradient(circle at top left, #b4ffb0 0%, transparent 60%),
+              radial-gradient(circle at bottom right, #79e879 10%, transparent 70%);
+  animation: springBloom 9s ease-in-out infinite alternate;
+}
+
+.spring-icon svg {
+  fill: #41b83b;
+  filter: drop-shadow(0 0 6px rgba(60,200,60,0.6));
+}
+
+@keyframes springBloom {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.05); opacity: 0.5; }
+}
+
+/* ===============================
+   SUMMER JAM - Golden Heat Glow
+   =============================== */
+.summer-jam::before {
+  background: radial-gradient(circle at top center, #fff1a0 0%, transparent 70%),
+              radial-gradient(circle at bottom right, #ffc94d 20%, transparent 80%);
+  animation: summerPulse 6s ease-in-out infinite alternate;
+}
+
+.summer-icon svg {
+  fill: #ffcc00;
+  filter: drop-shadow(0 0 8px rgba(255,200,0,0.7));
+}
+
+@keyframes summerPulse {
+  0% { transform: scale(1); opacity: 0.35; }
+  100% { transform: scale(1.05); opacity: 0.55; }
+}
+
+/* ===============================
+   SHARED SETTINGS
+   =============================== */
+.game-jam-card svg {
+  transition: transform 0.3s ease;
+}
+
+.game-jam-card:hover svg {
+  transform: scale(1.08);
+}
+
+.jam-icon {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+}
+
+
